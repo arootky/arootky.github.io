@@ -6,13 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://arootky.github.io">
-  <title>Archives | Welcome, I am arootky!</title>
+  <title>遗传算法GA | Welcome, I am arootky!</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Welcome, I am arootky!">
-<meta property="og:url" content="https://arootky.github.io/archives/index.html">
+  <meta name="description" content="课题研究用到，简单记录学习过程！">
+<meta property="og:type" content="article">
+<meta property="og:title" content="遗传算法GA">
+<meta property="og:url" content="https://arootky.github.io/2022/02/26/%E9%81%97%E4%BC%A0%E7%AE%97%E6%B3%95GA/index.html">
 <meta property="og:site_name" content="Welcome, I am arootky!">
+<meta property="og:description" content="课题研究用到，简单记录学习过程！">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-02-26T06:03:41.000Z">
+<meta property="article:modified_time" content="2022-03-02T13:32:04.773Z">
 <meta property="article:author" content="arootky">
 <meta name="twitter:card" content="summary">
   
@@ -142,157 +146,196 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-遗传算法GA" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      遗传算法GA
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2022" class="archive-year">2022</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/02/26/%E9%81%97%E4%BC%A0%E7%AE%97%E6%B3%95GA/" class="archive-article-date">
+
+        
+        <a href="/2022/02/26/%E9%81%97%E4%BC%A0%E7%AE%97%E6%B3%95GA/" class="archive-article-date">
   	<time datetime="2022-02-26T06:03:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-02-26</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/02/26/%E9%81%97%E4%BC%A0%E7%AE%97%E6%B3%95GA/">遗传算法GA</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>课题研究用到，简单记录学习过程！</p>
+<span id="more"></span>
 
-        <div class="article-info info-on-right">
-          
-          
+<h2 id="遗传算法"><a href="#遗传算法" class="headerlink" title="遗传算法"></a>遗传算法</h2><p>Genetic Algorithm是模仿生物进化机制发展的随机全局搜索和优化方法，本质是一种高效、并行、全局搜索的方法。</p>
+<blockquote>
+<p>简单的理解：物竞天择，适者生存。适应度高的才有资格，也更接近目标值。</p>
+</blockquote>
+<h3 id="基础步骤"><a href="#基础步骤" class="headerlink" title="基础步骤"></a>基础步骤</h3><blockquote>
+<p>选择</p>
+</blockquote>
+<p><code>锦标赛选择</code>：<br>    放回抽样 –&gt; 每次从种群中取出一定数量个体，选择其中最优的一个个体进入子代种群，重复此操作，直到新种群规模达到原种群规模。<br>    几元锦标赛就是一次在总体中取出几个个体。<br>    * 常用选择策略：轮盘赌、锦标赛、精英选择<br>        * 轮盘赌：适应度高的个体被选择的概率越大 (若个体间适应度差异大，易局部收敛)<br>    * 锦标赛：放回抽样</p>
+<ul>
+<li>另行观看：<a target="_blank" rel="noopener" href="https://blog.csdn.net/hba646333407/article/details/103251008">GA选择策略</a></li>
+</ul>
+<blockquote>
+<p>交叉</p>
+</blockquote>
+<h3 id="需解决问题"><a href="#需解决问题" class="headerlink" title="需解决问题"></a>需解决问题</h3><ol>
+<li>如何实施适应度赋值和选择操作，使进化向着Pareto最优解集方向进行</li>
+<li>如何保持种群多样性和非支配解集的分布均匀性</li>
+</ol>
+<h3 id="主要技术"><a href="#主要技术" class="headerlink" title="主要技术"></a>主要技术</h3><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">pop</span>=<span class="title">CreateEmptyIndividuals</span><span class="params">(n)</span></span></span><br><span class="line">  <span class="keyword">if</span> nargin&lt;<span class="number">1</span></span><br><span class="line">    n=<span class="number">1</span>;</span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">% individual为一个结构体</span></span><br><span class="line">  individual.Position=[];</span><br><span class="line">  individual.Position2=[];</span><br><span class="line">  individual.Cost=[];</span><br><span class="line">  individual.Rank=[];</span><br><span class="line">  individual.CrowdingDistance=[];</span><br><span class="line">  individual.DominationSet=[];</span><br><span class="line">  individual.DominatedCount=[];</span><br><span class="line"></span><br><span class="line">  pop=<span class="built_in">repmat</span>(individual, n, <span class="number">1</span>);  <span class="comment">% 重复 nx1 个individual，排成n行1列</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
 
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="params">[pop, F]</span>=<span class="title">NonDominatedSorting</span><span class="params">(pop)</span></span></span><br><span class="line">  F&#123;<span class="number">1</span>&#125;=[];</span><br><span class="line">  </span><br><span class="line">  npop=<span class="built_in">numel</span>(pop);</span><br><span class="line">  <span class="keyword">for</span> <span class="built_in">i</span>=<span class="number">1</span>:npop</span><br><span class="line">    p=pop(<span class="built_in">i</span>);</span><br><span class="line">    p.DominationSet=[];</span><br><span class="line">    p.DominatedCount=<span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> <span class="built_in">j</span>=<span class="number">1</span>:npop</span><br><span class="line">      <span class="keyword">if</span> <span class="built_in">j</span>==<span class="built_in">i</span></span><br><span class="line">        <span class="keyword">continue</span>;</span><br><span class="line">      <span class="keyword">end</span></span><br><span class="line">      q=pop(<span class="built_in">j</span>);</span><br><span class="line">      <span class="keyword">if</span> Dominates(p, q)</span><br><span class="line">        p.DominationSet=[p.DominationSet <span class="built_in">j</span>];</span><br><span class="line">      <span class="keyword">elseif</span> Dominates(q, p)</span><br><span class="line">        p.DominatedCount=p.DominatedCount+<span class="number">1</span>;</span><br><span class="line">      <span class="keyword">end</span></span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> p.DominatedCount==<span class="number">0</span></span><br><span class="line">      p.Rank=<span class="number">1</span>;</span><br><span class="line">      F&#123;<span class="number">1</span>&#125;=[F&#123;<span class="number">1</span>&#125; <span class="built_in">i</span>];</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">    pop(<span class="built_in">i</span>)=p;</span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">  f=<span class="number">1</span>;</span><br><span class="line">  <span class="keyword">while</span> <span class="built_in">true</span></span><br><span class="line">    Q=[];</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> <span class="built_in">i</span>=<span class="number">1</span>:<span class="built_in">numel</span>(F&#123;f&#125;)</span><br><span class="line">      p=pop(F&#123;f&#125;(<span class="built_in">i</span>));</span><br><span class="line"></span><br><span class="line">      <span class="keyword">for</span> <span class="built_in">j</span>=<span class="number">1</span>:<span class="built_in">numel</span>(p.DominationSet)</span><br><span class="line">        q=pop(p.DominationSet(<span class="built_in">j</span>));</span><br><span class="line"></span><br><span class="line">	q.DominatedCount=q.DominatedCount<span class="number">-1</span>;</span><br><span class="line">	<span class="keyword">if</span> q.DominatedCount==<span class="number">0</span></span><br><span class="line">	  q.Rank=f+<span class="number">1</span>;</span><br><span class="line">	  Q=[Q p.DominationSet(<span class="built_in">j</span>)];</span><br><span class="line">	<span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">	pop(p.DominatedSet(<span class="built_in">j</span>))=q;</span><br><span class="line">      <span class="keyword">end</span></span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">isempty</span>(Q)</span><br><span class="line">      <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">    F&#123;f+<span class="number">1</span>&#125;=Q;</span><br><span class="line">    f=f+<span class="number">1</span>;</span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">b</span>=<span class="title">Dominates</span><span class="params">(p, q)</span></span></span><br><span class="line">  <span class="keyword">if</span> isstruct(p)</span><br><span class="line">    p=p.Cost;</span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line">  </span><br><span class="line">  <span class="keyword">if</span> isstruct(q)</span><br><span class="line">    q=q.Cost;</span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line">  </span><br><span class="line">  b=(all(p&lt;=q) &amp;&amp; any(p&lt;q));</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">pop</span>=<span class="title">CalcCrowdingDistance</span><span class="params">(pop, F)</span></span></span><br><span class="line">  nobj=<span class="built_in">numel</span>(pop(<span class="number">1</span>).Cost);</span><br><span class="line">  </span><br><span class="line">  nf=<span class="built_in">numel</span>(F);</span><br><span class="line">  <span class="keyword">for</span> f=<span class="number">1</span>:nf</span><br><span class="line">    A=F&#123;f&#125;;</span><br><span class="line">    C=GetCosts(pop(A));</span><br><span class="line">    D=<span class="built_in">zeros</span>(<span class="built_in">size</span>(C));</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> <span class="built_in">j</span>=<span class="number">1</span>:nobj</span><br><span class="line">      [SCj, k]=<span class="built_in">sort</span>(C(<span class="built_in">j</span>, :));</span><br><span class="line"></span><br><span class="line">      D(<span class="built_in">j</span>, k(<span class="number">1</span>))=<span class="built_in">inf</span>;</span><br><span class="line">      D(<span class="built_in">j</span>, k(<span class="keyword">end</span>))=<span class="built_in">inf</span>;</span><br><span class="line">      D(<span class="built_in">j</span>, k(<span class="number">2</span>:<span class="keyword">end</span><span class="number">-1</span>))=(SCj(<span class="number">3</span>:<span class="keyword">end</span>)-SCj(<span class="number">1</span>:<span class="keyword">end</span><span class="number">-2</span>))/(SCj(<span class="keyword">end</span>)-SCj(<span class="number">1</span>));</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">    D=sum(D, <span class="number">1</span>);</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> <span class="built_in">i</span>=<span class="number">1</span>:<span class="built_in">numel</span>(A)</span><br><span class="line">      pop(A(<span class="built_in">i</span>)).CrowdingDistance=D(<span class="built_in">i</span>);</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">costs</span>=<span class="title">GetCosts</span><span class="params">(pop)</span></span></span><br><span class="line">  nobj=<span class="built_in">numel</span>(pop(<span class="number">1</span>).Cost);</span><br><span class="line">  costs=<span class="built_in">reshape</span>([pop.Cost], nobj, []);</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">pop</span>=<span class="title">SortPopulation</span><span class="params">(pop)</span></span></span><br><span class="line">  CD=[pop.CrowdingDistance];</span><br><span class="line">  [CD, CD_sort_order]=<span class="built_in">sort</span>(CD, <span class="string">&#x27;descend&#x27;</span>);</span><br><span class="line">  pop=pop(CD_sort_order);</span><br><span class="line"></span><br><span class="line">  R=[pop.Rank];</span><br><span class="line">  [R, R_sort_order]=<span class="built_in">sort</span>(R);</span><br><span class="line">  pop=pop(R_sort_order);</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">p</span>=<span class="title">BinaryTournamentSelection</span><span class="params">(pop)</span></span></span><br><span class="line">  npop=<span class="built_in">numel</span>(pop);</span><br><span class="line">  <span class="built_in">i</span>=randi(npop, <span class="number">1</span>, <span class="number">2</span>);</span><br><span class="line">  p1=pop(<span class="built_in">i</span>(<span class="number">1</span>));</span><br><span class="line">  p2=pop(<span class="built_in">i</span>(<span class="number">2</span>));</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> p1.Rank &lt; p2.Rank</span><br><span class="line">    p=p1;</span><br><span class="line">  <span class="keyword">elseif</span> p1.Rank &gt; p2.Rank</span><br><span class="line">    p=p2;</span><br><span class="line">  <span class="keyword">else</span></span><br><span class="line">    <span class="keyword">if</span> p1.CrowdingDistance &gt; p2.CrowdingDistance</span><br><span class="line">      p=p1;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">      p=p2;</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">ch</span>=<span class="title">Crossover</span><span class="params">(p1, p2, pc)</span></span></span><br><span class="line">  x1=p1.Position2;</span><br><span class="line">  x2=p2.Position2;</span><br><span class="line">  nv=<span class="built_in">numel</span>(x1);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> <span class="built_in">rand</span> &lt; pc</span><br><span class="line">    cpoint=<span class="built_in">round</span>(<span class="built_in">rand</span>*nv);</span><br><span class="line">    <span class="keyword">if</span> cpoint &gt; nv</span><br><span class="line">      cpoint=nv;</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line">    <span class="keyword">if</span> cpoint &lt;= <span class="number">0</span></span><br><span class="line">      cpoint=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line">    tmp=x1(cpoint:nv);</span><br><span class="line">    x1(cpoint:nv)=x2(cpoint:nv);</span><br><span class="line">    x2(cpoint:nv)=tmp;</span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">  ch=CreateEmptyIndividuals(<span class="number">2</span>);</span><br><span class="line">  ch(<span class="number">1</span>).Position2=x1;</span><br><span class="line">  ch(<span class="number">2</span>).Position2=x2;</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">q</span>=<span class="title">Mutate</span><span class="params">(p, pm)</span></span></span><br><span class="line">  y=p.Position2;</span><br><span class="line">  [px, py]=<span class="built_in">size</span>(y);</span><br><span class="line">  newpop=<span class="built_in">ones</span>(<span class="built_in">size</span>(y));</span><br><span class="line"></span><br><span class="line">  <span class="keyword">for</span> <span class="built_in">i</span>=<span class="number">1</span>:px</span><br><span class="line">    <span class="keyword">for</span> <span class="built_in">j</span>=<span class="number">1</span>:py</span><br><span class="line">      <span class="keyword">if</span> <span class="built_in">rand</span> &lt; pm</span><br><span class="line">        newpop(<span class="built_in">i</span>, <span class="built_in">j</span>)=y(<span class="built_in">i</span>, <span class="built_in">j</span>);</span><br><span class="line">	<span class="keyword">if</span> newpop(<span class="built_in">i</span>, <span class="built_in">j</span>)==<span class="number">0</span></span><br><span class="line">	  newpop(<span class="built_in">i</span>, <span class="built_in">j</span>)=<span class="number">1</span>;</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">	  newpop(<span class="built_in">i</span>, <span class="built_in">j</span>)=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">end</span></span><br><span class="line">      <span class="keyword">else</span></span><br><span class="line">        newpop(<span class="built_in">i</span>, <span class="built_in">j</span>)=y(<span class="built_in">i</span>, <span class="built_in">j</span>);</span><br><span class="line">      <span class="keyword">end</span></span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">  q=CreateEmptyIndividuals();</span><br><span class="line">  q.Position2=newpop;</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">y</span>=<span class="title">translate2to10</span><span class="params">(x)</span></span></span><br><span class="line">  [px, py]=<span class="built_in">size</span>(x);</span><br><span class="line">  y1=<span class="built_in">zeros</span>(<span class="built_in">size</span>(x));</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">for</span> <span class="built_in">i</span>=<span class="number">1</span>:py</span><br><span class="line">    y1(:, <span class="built_in">i</span>)=<span class="number">2.</span>^(py-<span class="built_in">i</span>).*x(:, <span class="built_in">i</span>);</span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">  y=sum(y1, <span class="number">2</span>);</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">y</span>=<span class="title">translate10to2</span><span class="params">(x, n)</span></span></span><br><span class="line">  x=x(:);</span><br><span class="line">  m=<span class="built_in">numel</span>(x);</span><br><span class="line">  y=<span class="built_in">zeros</span>(m, n);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">for</span> <span class="built_in">i</span>=<span class="number">1</span>:<span class="built_in">numel</span>(x)</span><br><span class="line">    a=x(<span class="built_in">i</span>);</span><br><span class="line">    <span class="built_in">j</span>=n;</span><br><span class="line">    <span class="keyword">while</span> a&gt;<span class="number">0</span></span><br><span class="line">      y(<span class="built_in">i</span>, <span class="built_in">j</span>)=<span class="built_in">mod</span>(a, <span class="number">2</span>);</span><br><span class="line">      a=<span class="built_in">floor</span>(a/<span class="number">2</span>);</span><br><span class="line">      <span class="built_in">j</span>=<span class="built_in">j</span><span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">y</span>=<span class="title">decodechrom</span><span class="params">(x, length, varmin, varmax)</span></span></span><br><span class="line">  tmp=translate2to10(x);</span><br><span class="line">  y=varmin+tmp.*(varmax-varmin)./(<span class="number">2.</span>^<span class="built_in">length</span><span class="number">-1</span>);</span><br><span class="line">  y=y&#x27;;</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/alipay.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://arootky.github.io/2022/02/26/%E9%81%97%E4%BC%A0%E7%AE%97%E6%B3%95GA/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/02/25/%E5%89%91%E6%8C%87offer%E5%88%B7%E9%A2%98/" class="archive-article-date">
-  	<time datetime="2022-02-25T07:16:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-02-25</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2022/02/25/%E5%89%91%E6%8C%87offer%E5%88%B7%E9%A2%98/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">剑指offer刷题</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/02/25/%E5%89%91%E6%8C%87offer%E5%88%B7%E9%A2%98/">剑指offer刷题</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/02/25/vim/" class="archive-article-date">
-  	<time datetime="2022-02-25T01:19:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-02-25</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/02/25/vim/">vim</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/02/19/readme/" class="archive-article-date">
-  	<time datetime="2022-02-19T04:52:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-02-19</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/02/19/readme/">readme</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/02/17/hello-world/" class="archive-article-date">
-  	<time datetime="2022-02-17T13:54:50.253Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-02-17</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/02/17/hello-world/">Hello World</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -315,8 +358,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
