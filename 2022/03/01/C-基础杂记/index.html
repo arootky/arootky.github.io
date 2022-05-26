@@ -16,7 +16,7 @@
 <meta property="og:description" content="记录的为arootky学习过程中遇到的知识点，比较杂，属于查缺补漏!">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-03-01T07:02:57.000Z">
-<meta property="article:modified_time" content="2022-05-26T07:16:16.304Z">
+<meta property="article:modified_time" content="2022-05-26T07:42:00.542Z">
 <meta property="article:author" content="arootky">
 <meta name="twitter:card" content="summary">
   
@@ -173,19 +173,18 @@
 <li><p><strong>资源释放</strong></p>
 <p> <strong>内存泄漏</strong><br> 类似后台运行，服务程序，常驻内存程序，动态分配内存而没有释放，<code>内存泄漏</code>；<br> 内存泄漏只是针对运行着的进程而言的，结束后所有分配的资源都被回收</p>
 <p> 另外，不是一直运行的程序，虽然程序退出结束时，操作系统会：</p>
-<pre><code> `回收动态分配的内存`、`关闭打开的文件`、`关闭连接的socket`、`关闭数据库连接(会话)`等，
-</code></pre>
-<p> 但若不手动写资源释放的代码，资源就真的释放了吗？</p>
-<pre><code> 正在写入文件内容，此时程序异常退出，那已写入的内容如何处理，虽然文件会被关闭；
- 同理，正在入库数据，此时程序退出，只是关闭连接不行，入库一半的数据需要回滚，而操作系统肯定不会回滚操作啊
-</code></pre>
-<p> <strong>析构函数是否被调用</strong><br> 当程序调用<code>exit()</code>退出时，<code>局部对象的析构函数</code>不会被调用 (用return是没毛病的)</p>
+<blockquote>
+<p><code>回收动态分配的内存</code>、<code>关闭打开的文件</code>、<code>关闭连接的socket</code>、<code>关闭数据库连接(会话)</code>等，<br> 但若不手动写资源释放的代码，资源就真的释放了吗？<br>正在写入文件内容，此时程序异常退出，那已写入的内容如何处理，虽然文件会被关闭；<br>同理，正在入库数据，此时程序退出，只是关闭连接不行，入库一半的数据需要回滚，而操作系统肯定不会回滚操作啊</p>
+</blockquote>
+<p> <strong>析构函数是否被调用</strong></p>
+<blockquote>
+<p>当程序调用<code>exit()</code>退出时，**<code>局部对象的析构函数</code>不会被调用** (用return是没毛病的)</p>
+</blockquote>
 <p> 当你定义的对象为局部对象(定义在{}里等)，警惕(<code>就不要</code>)使用exit()，避免 析构函数(写有释放资源代码) 得不到调用，资源未释放；但很多时候，exit()退出函数需要使用(就是退出程序，不是说退出某个子函数，那叫返回，用return就行)，那可以将对象定义为全局对象；</p>
 <p> exit()函数的作用是删除所有的静态对象，刷新缓冲，关闭所有的I/O通道，然后结束程序</p>
-<pre><code> 若对象是局部对象，exit()函数不会调用对象的析构函数，因为不存在栈空间回收问题
- 若对象是全局变量，会调用对象的析构函数
- 若是动态建立的对象，除非手动删除，否则不会调用对象的析构函数
-</code></pre>
+<blockquote>
+<p>若对象是局部对象，exit()函数不会调用对象的析构函数，因为不存在栈空间回收问题<br>若对象是全局变量，会调用对象的析构函数<br>若是动态建立的对象，除非手动删除，否则不会调用对象的析构函数</p>
+</blockquote>
 </li>
 </ol>
 <h2 id="语言基础"><a href="#语言基础" class="headerlink" title="语言基础"></a>语言基础</h2><ol>
