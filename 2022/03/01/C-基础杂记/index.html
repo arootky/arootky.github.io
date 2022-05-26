@@ -6,17 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://arootky.github.io">
-  <title>C++基础杂记.md | Welcome, I am arootky!</title>
+  <title>C++基础杂记 | Welcome, I am arootky!</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="C++ 知识点杂记 资源释放  内存泄漏 类似后台运行，服务程序，常驻内存程序，动态分配内存而没有释放，内存泄漏； 内存泄漏只是针对运行着的进程而言的，结束后所有分配的资源都被回收  另外，不是一直运行的程序，虽然程序退出结束时，操作系统会：  &#96;回收动态分配的内存&#96;、&#96;关闭打开的文件&#96;、&#96;关闭连接的socket&#96;、&#96;关闭数据库连接(会话)&#96;等，   但若不手动写资源释放的代码，资源就真的释放了吗">
+  <meta name="description" content="记录的为arootky学习过程中遇到的知识点，比较杂，属于查缺补漏!">
 <meta property="og:type" content="article">
-<meta property="og:title" content="C++基础杂记.md">
-<meta property="og:url" content="https://arootky.github.io/2022/02/26/C-%E5%9F%BA%E7%A1%80%E6%9D%82%E8%AE%B0/index.html">
+<meta property="og:title" content="C++基础杂记">
+<meta property="og:url" content="https://arootky.github.io/2022/03/01/C-%E5%9F%BA%E7%A1%80%E6%9D%82%E8%AE%B0/index.html">
 <meta property="og:site_name" content="Welcome, I am arootky!">
-<meta property="og:description" content="C++ 知识点杂记 资源释放  内存泄漏 类似后台运行，服务程序，常驻内存程序，动态分配内存而没有释放，内存泄漏； 内存泄漏只是针对运行着的进程而言的，结束后所有分配的资源都被回收  另外，不是一直运行的程序，虽然程序退出结束时，操作系统会：  &#96;回收动态分配的内存&#96;、&#96;关闭打开的文件&#96;、&#96;关闭连接的socket&#96;、&#96;关闭数据库连接(会话)&#96;等，   但若不手动写资源释放的代码，资源就真的释放了吗">
+<meta property="og:description" content="记录的为arootky学习过程中遇到的知识点，比较杂，属于查缺补漏!">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2022-02-26T07:02:57.000Z">
-<meta property="article:modified_time" content="2022-05-26T07:06:27.055Z">
+<meta property="article:published_time" content="2022-03-01T07:02:57.000Z">
+<meta property="article:modified_time" content="2022-05-26T07:16:16.304Z">
 <meta property="article:author" content="arootky">
 <meta name="twitter:card" content="summary">
   
@@ -153,20 +153,23 @@
         
   
     <h1 class="article-title" itemprop="name">
-      C++基础杂记.md
+      C++基础杂记
     </h1>
   
 
         
-        <a href="/2022/02/26/C-%E5%9F%BA%E7%A1%80%E6%9D%82%E8%AE%B0/" class="archive-article-date">
-  	<time datetime="2022-02-26T07:02:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-02-26</time>
+        <a href="/2022/03/01/C-%E5%9F%BA%E7%A1%80%E6%9D%82%E8%AE%B0/" class="archive-article-date">
+  	<time datetime="2022-03-01T07:02:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-03-01</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="C-知识点杂记"><a href="#C-知识点杂记" class="headerlink" title="C++ 知识点杂记"></a>C++ 知识点杂记</h1><ol start="0">
+        <p>记录的为arootky学习过程中遇到的知识点，比较杂，属于查缺补漏!</p>
+<span id="more"></span>
+
+<h2 id="内存"><a href="#内存" class="headerlink" title="内存"></a>内存</h2><ol>
 <li><p><strong>资源释放</strong></p>
 <p> <strong>内存泄漏</strong><br> 类似后台运行，服务程序，常驻内存程序，动态分配内存而没有释放，<code>内存泄漏</code>；<br> 内存泄漏只是针对运行着的进程而言的，结束后所有分配的资源都被回收</p>
 <p> 另外，不是一直运行的程序，虽然程序退出结束时，操作系统会：</p>
@@ -185,7 +188,7 @@
 </code></pre>
 </li>
 </ol>
-<ol>
+<h2 id="语言基础"><a href="#语言基础" class="headerlink" title="语言基础"></a>语言基础</h2><ol>
 <li><p><strong><code>extern</code></strong></p>
 <blockquote>
 <p>如果想在多个文件之间共享对象，必须在变量的定义之前添加关键字<code>extern</code></p>
@@ -692,7 +695,7 @@ _exit和_Exit不调用而直接由内核接管进行清理。因此，在**main�
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://arootky.github.io/2022/02/26/C-%E5%9F%BA%E7%A1%80%E6%9D%82%E8%AE%B0/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://arootky.github.io/2022/03/01/C-%E5%9F%BA%E7%A1%80%E6%9D%82%E8%AE%B0/" alt="微信分享二维码">
     </div>
 </div>
 
