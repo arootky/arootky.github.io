@@ -6,13 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://arootky.github.io">
-  <title>Archives: 2022 | Welcome, I am arootky!</title>
+  <title>排序算法 | Welcome, I am arootky!</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Welcome, I am arootky!">
-<meta property="og:url" content="https://arootky.github.io/archives/2022/index.html">
+  <meta name="description" content="基础的经典排序算法">
+<meta property="og:type" content="article">
+<meta property="og:title" content="排序算法">
+<meta property="og:url" content="https://arootky.github.io/2022/06/02/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/index.html">
 <meta property="og:site_name" content="Welcome, I am arootky!">
+<meta property="og:description" content="基础的经典排序算法">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-06-02T01:43:09.000Z">
+<meta property="article:modified_time" content="2022-06-18T03:35:19.868Z">
 <meta property="article:author" content="arootky">
 <meta name="twitter:card" content="summary">
   
@@ -142,292 +146,194 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-排序算法" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      排序算法
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2022" class="archive-year">2022</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/06/02/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/" class="archive-article-date">
+
+        
+        <a href="/2022/06/02/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/" class="archive-article-date">
   	<time datetime="2022-06-02T01:43:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-06-02</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/06/02/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/">排序算法</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>基础的经典排序算法</p>
+<span id="more"></span>
 
-        <div class="article-info info-on-right">
-          
-          
+<h3 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h3><blockquote>
+<p><code>O(n^2)</code>, <code>stable</code>(排序前后相等元素相对位置不会被改变)<br>需比较len-1轮，每轮确定一个最大数在末尾(下轮便少一数)</p>
+</blockquote>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">bubbleSort</span><span class="params">(<span class="type">int</span> *arr, <span class="type">int</span> len)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(len &lt; <span class="number">2</span>) <span class="keyword">return</span>;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i=len<span class="number">-1</span>; i&gt;<span class="number">0</span>; i--) &#123;</span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> j=<span class="number">0</span>; j&lt;i; j++) &#123;</span><br><span class="line">			<span class="keyword">if</span>(arr[j] &gt; arr[j+<span class="number">1</span>]) &#123;</span><br><span class="line">				<span class="type">int</span> tmp=arr[j];</span><br><span class="line">				arr[j]=arr[j+<span class="number">1</span>];</span><br><span class="line">				arr[j+<span class="number">1</span>]=tmp;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+<h3 id="选择排序"><a href="#选择排序" class="headerlink" title="选择排序"></a>选择排序</h3><blockquote>
+<p><code>O(n^2)</code>, <code>not-stable</code><br>需比较len-1轮，每轮确定一个最小数在首部(下轮便少一数)</p>
+</blockquote>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">selectSort</span><span class="params">(<span class="type">int</span> *arr, <span class="type">int</span> len)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(len &lt; <span class="number">2</span>) <span class="keyword">return</span>;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>; i&lt;len<span class="number">-1</span>; i++) &#123;</span><br><span class="line">		<span class="type">int</span> pos=i;  <span class="comment">//借助pos定位每轮中的最小值位置</span></span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> j=i+<span class="number">1</span>; j&lt;len; j++) &#123;</span><br><span class="line">			<span class="keyword">if</span>(arr[j] &lt; arr[pos]) pos=j;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span>(pos != i) std::<span class="built_in">swap</span>(arr[i], arr[pos]);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;  <span class="comment">//O(n^2), no-stable</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="插入排序"><a href="#插入排序" class="headerlink" title="插入排序"></a>插入排序</h3><blockquote>
+<p><code>O(n^2)</code>, <code>stable</code><br>需比较len-1轮，每轮确定当前数在其之前(已排好序)应插入的位置</p>
+</blockquote>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">insertSort</span><span class="params">(<span class="type">int</span> *arr, <span class="type">int</span> len)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>; i&lt;len; i++) &#123;</span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> j=i<span class="number">-1</span>; j&gt;=<span class="number">0</span>; j--) &#123;</span><br><span class="line">			<span class="keyword">if</span>(arr[j+<span class="number">1</span>] &lt; arr[j]) std::<span class="built_in">swap</span>(arr[j+<span class="number">1</span>], arr[j]);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h3><blockquote>
+<p><code>O(nlogn)</code> 最差时为O(n^2),取决于基准值的选取，另空间O(logn) <code>not-stable</code><br>选定基准(多见为l)，以基准值一分为二</p>
+</blockquote>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">quickSort</span><span class="params">(<span class="type">int</span> *arr, <span class="type">int</span> l, <span class="type">int</span> r)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(l &gt;= r) <span class="keyword">return</span>;</span><br><span class="line"></span><br><span class="line">	<span class="type">int</span> i=l, j=r;</span><br><span class="line">	<span class="keyword">while</span>(i &lt; j) &#123;</span><br><span class="line">		<span class="keyword">while</span>(i&lt;j &amp;&amp; arr[j]&gt;=arr[l]) j--;</span><br><span class="line">		<span class="keyword">while</span>(i&lt;j &amp;&amp; arr[i]&lt;=arr[l]) i++;</span><br><span class="line">		std::<span class="built_in">swap</span>(arr[i], arr[j]);  <span class="comment">//交换i和j位置的数</span></span><br><span class="line">	&#125;</span><br><span class="line">	std::<span class="built_in">swap</span>(arr[i], arr[l]);  <span class="comment">//交换i(==j)和l位置的数(至此，i(==j)位置左边均小于它(基准值)，右边均大于它)</span></span><br><span class="line">	<span class="built_in">quickSort</span>(arr, l, i<span class="number">-1</span>);</span><br><span class="line">	<span class="built_in">quickSort</span>(arr, i+<span class="number">1</span>, r);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="归并排序"><a href="#归并排序" class="headerlink" title="归并排序"></a>归并排序</h3><blockquote>
+<p><code>O(nlogn)</code> 另空间O(n) <code>stable</code><br>需要借助辅助数组，二分，在回溯时进行归并</p>
+</blockquote>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">mergeSort</span><span class="params">(<span class="type">int</span> *arr, <span class="type">int</span> *arrtmp, <span class="type">int</span> l, <span class="type">int</span> r)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(l &gt;= r) <span class="keyword">return</span>;</span><br><span class="line"></span><br><span class="line">	<span class="type">int</span> m=l+(r-l)/<span class="number">2</span>;</span><br><span class="line">	<span class="type">int</span> l1=l, r1=m, l2=m+<span class="number">1</span>, r2=r;</span><br><span class="line">	<span class="built_in">mergeSort</span>(arr, arrtmp, l1, r1);</span><br><span class="line">	<span class="built_in">mergeSort</span>(arr, arrtmp, l2, r2);</span><br><span class="line"></span><br><span class="line">	<span class="type">int</span> i=l;  <span class="comment">//i为记录arrtmp当前位置</span></span><br><span class="line">	<span class="keyword">while</span>(l1&lt;=r1 &amp;&amp; l2&lt;=r2) &#123;</span><br><span class="line">		arrtmp[i++]=arr[l1]&lt;=arr[l2] ? arr[l1++] : arr[l2++];</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">while</span>(l1 &lt;= r1) &#123;</span><br><span class="line">		arrtmp[i++]=arr[l1++];</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">while</span>(l2 &lt;= r2) &#123;</span><br><span class="line">		arrtmp[i++]=arr[l2++];</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="built_in">memcpy</span>(arr+l, arrtmp+l, (r-l+<span class="number">1</span>)*<span class="built_in">sizeof</span>(<span class="type">int</span>));  <span class="comment">//每次回溯记得将arrtmp内容更新掉arr</span></span><br><span class="line">	<span class="comment">//该行等价于下面</span></span><br><span class="line">	<span class="comment">/*</span></span><br><span class="line"><span class="comment">	for(int j=l; j&lt;=r; j++) &#123;</span></span><br><span class="line"><span class="comment">		arr[j]=arrtmp[j];</span></span><br><span class="line"><span class="comment">	&#125;</span></span><br><span class="line"><span class="comment">	*/</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="堆排序"><a href="#堆排序" class="headerlink" title="堆排序"></a>堆排序</h3><blockquote>
+<p><code>O(nlogn)</code> <code>not-stable</code><br>完全二叉树，元素下沉heapify (利用大顶堆性质，实现升序)<br>首先将数组想象为完全二叉树结构，从最后一个父节点开始先heapify一遍(得到一颗大顶堆树)，<br>再每次摘下堆顶元素(最大值)放于数组末尾，并记得对缺顶的树重新heapify得到新大顶堆(每轮少一数)</p>
+</blockquote>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">heapify</span><span class="params">(<span class="type">int</span> *arr, <span class="type">int</span> start, <span class="type">int</span> end)</span> </span>&#123;  <span class="comment">//小元素往下，大元素更到上面</span></span><br><span class="line">	<span class="type">int</span> dad=start, son=<span class="number">2</span>*dad+<span class="number">1</span>;</span><br><span class="line">	<span class="keyword">while</span>(son &lt;= end) &#123;</span><br><span class="line">		<span class="keyword">if</span>(son+<span class="number">1</span>&lt;=end &amp;&amp; arr[son]&lt;arr[son+<span class="number">1</span>]) son++;  <span class="comment">//取两子节点中较大者</span></span><br><span class="line">		<span class="keyword">if</span>(arr[dad] &gt; arr[son]) <span class="keyword">return</span>;  <span class="comment">//若父节点值大，退出</span></span><br><span class="line">		std::<span class="built_in">swap</span>(arr[dad], arr[son]);</span><br><span class="line">		dad=son; son=<span class="number">2</span>*dad+<span class="number">1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">heapSort</span><span class="params">(<span class="type">int</span> *arr, <span class="type">int</span> len)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(len &lt; <span class="number">2</span>) <span class="keyword">return</span>;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//从最后一个父节点((len-1)/2)，自底向上开始heapify (最后一层叶子节点自然是满足大顶堆)</span></span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i=(len<span class="number">-1</span>)/<span class="number">2</span>; i&gt;=<span class="number">0</span>; i--) <span class="built_in">heapify</span>(arr, i, len<span class="number">-1</span>);</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i=len<span class="number">-1</span>; i&gt;<span class="number">0</span>; i--) &#123;</span><br><span class="line">		std::<span class="built_in">swap</span>(arr[<span class="number">0</span>], arr[i]);  <span class="comment">//将堆顶交换到数组末尾</span></span><br><span class="line">		<span class="built_in">heapify</span>(arr, <span class="number">0</span>, i<span class="number">-1</span>);  <span class="comment">//记得对缺顶的树重新heapify(每次少一数)</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h2><p><strong>稳定</strong>排序有：冒泡、插入、归并</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/alipay.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://arootky.github.io/2022/06/02/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/05/29/I-O%E5%A4%9A%E8%B7%AF%E5%A4%8D%E7%94%A8/" class="archive-article-date">
-  	<time datetime="2022-05-29T12:10:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-05-29</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2022/05/29/I-O%E5%A4%9A%E8%B7%AF%E5%A4%8D%E7%94%A8/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">I/O多路复用</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/05/29/I-O%E5%A4%9A%E8%B7%AF%E5%A4%8D%E7%94%A8/">I/O多路复用</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/05/28/little-tools/" class="archive-article-date">
-  	<time datetime="2022-05-28T07:56:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-05-28</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/05/28/little-tools/">little tools</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/05/28/socket/" class="archive-article-date">
-  	<time datetime="2022-05-28T04:34:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-05-28</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/05/28/socket/">socket</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/03/01/C-%E5%9F%BA%E7%A1%80%E6%9D%82%E8%AE%B0/" class="archive-article-date">
-  	<time datetime="2022-03-01T07:02:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-03-01</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/03/01/C-%E5%9F%BA%E7%A1%80%E6%9D%82%E8%AE%B0/">C++基础杂记</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/02/26/%E9%81%97%E4%BC%A0%E7%AE%97%E6%B3%95GA/" class="archive-article-date">
-  	<time datetime="2022-02-26T06:03:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-02-26</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/02/26/%E9%81%97%E4%BC%A0%E7%AE%97%E6%B3%95GA/">遗传算法GA</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/02/25/%E5%89%91%E6%8C%87offer%E5%88%B7%E9%A2%98/" class="archive-article-date">
-  	<time datetime="2022-02-25T07:16:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-02-25</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/02/25/%E5%89%91%E6%8C%87offer%E5%88%B7%E9%A2%98/">剑指offer刷题</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/02/25/vim/" class="archive-article-date">
-  	<time datetime="2022-02-25T01:19:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-02-25</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/02/25/vim/">vim</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/02/19/readme/" class="archive-article-date">
-  	<time datetime="2022-02-19T04:52:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-02-19</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/02/19/readme/">readme</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/02/17/hello-world/" class="archive-article-date">
-  	<time datetime="2022-02-17T13:54:50.253Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-02-17</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/02/17/hello-world/">Hello World</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -450,8 +356,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
