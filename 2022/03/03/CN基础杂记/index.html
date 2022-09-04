@@ -16,7 +16,7 @@
 <meta property="og:description" content="一些额外的计算机网络知识杂记">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-03-03T01:28:04.000Z">
-<meta property="article:modified_time" content="2022-06-23T02:12:51.960Z">
+<meta property="article:modified_time" content="2022-08-26T07:32:37.989Z">
 <meta property="article:author" content="arootky">
 <meta name="twitter:card" content="summary">
   
@@ -193,6 +193,21 @@
 <li><p>路由器<br>工作在网络层，作用是连接不同地网段(广域网)，并找到网络中数据传输最合适的路径；<br>在网络中起到网关的作用；</p>
 </li>
 </ul>
+<ol start="2">
+<li><p><strong>TCP连接的一些事故</strong></p>
+<blockquote>
+<p>TCP要正常断开，显然是某方调用close</p>
+</blockquote>
+<p> 进程崩溃时，kill -9杀死进程，断开将由操作系统内核代劳<br> 若某一方断电或断网，且刚好正在发送数据</p>
+<pre><code> TCP数据包发送失败会重试，达上限会断开
+ 若在上限前恢复，连接无影响；
+</code></pre>
+<p> 若在断开后恢复，客户端再发数据，服务端回RST，客户端会断开连接；<br> 若某一方断电或断网，且无数据传输</p>
+<pre><code> 若开启了KeepAlive，则会在心跳检测失败后断开
+ 若没有开启KeepAlive，则连接永远存在
+</code></pre>
+</li>
+</ol>
 
       
 
